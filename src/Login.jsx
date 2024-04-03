@@ -18,7 +18,7 @@ export const Login = ({setUserId}) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:4007/api/loginUser', loginData);
+            const response = await axios.post('https://capstonebackend-twoc.onrender.com/api/loginUser', loginData);
             setMessage(response.data.message);
             const userId = response.data.userlogin._id;
             console.log(response.data);
@@ -38,7 +38,7 @@ export const Login = ({setUserId}) => {
     };
     const fetchData = async (userId) => {
     try {
-      const response = await axios.get(`http://localhost:4007/api/getusermarks/${userId}`);
+      const response = await axios.get(`https://capstonebackend-twoc.onrender.com/api/getusermarks/${userId}`);
       // Process the data as needed
       console.log(response.data);
     } catch (error) {

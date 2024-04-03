@@ -10,7 +10,7 @@ export const MentorDashboard = ({setId}) => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://localhost:4007/api/getalluser');
+        const response = await axios.get('https://capstonebackend-twoc.onrender.com/api/getalluser');
         setUsers(response.data.message);
         console.log(response.data.message)
       } catch (error) {

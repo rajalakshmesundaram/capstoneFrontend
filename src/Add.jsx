@@ -12,7 +12,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
   const handleSaveMarks = async () => {
     try {
-      const response = await axios.post(`http://localhost:4007/api/getMarks/${id}`, {
+      const response = await axios.post(`https://capstonebackend-twoc.onrender.com/api/getMarks/${id}`, {
         codeKataMarks,
         webkataMarks,
         tasksMarks,

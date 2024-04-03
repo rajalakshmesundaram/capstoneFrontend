@@ -11,7 +11,7 @@ export const UserDashboard = ({ userId }) => {
   useEffect(() => {
     const fetchMarksData = async () => {
       try {
-        const response = await axios.get(`http://localhost:4007/api/getusermarks/${userId}`);
+        const response = await axios.get(`https://capstonebackend-twoc.onrender.com/api/getusermarks/${userId}`);
         setMarksData(response.data.message);
       } catch (error) {
         console.error('Error fetching marks data:', error);
