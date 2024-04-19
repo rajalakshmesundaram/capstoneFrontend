@@ -9,6 +9,7 @@ import MentorDashboard from "./MentorDashboard"
 import { useState } from "react"
 import { Add } from "./Add"
 import { UserDashboard } from "./UserDashboard"
+import { Task } from "./Task"
 
 
 
@@ -29,7 +30,7 @@ export const App = () => {
     <Route path="/forgotpassword" element={<ForgotPassword/>}/>
       <Route path="/resetpassword/:token" element={<Resetpassword/>}/>
       <Route path='/addmarks/:id' element={<Add id={id}/>}/>
-      <Route path='/userDashboard/:userId' element={<UserDashboard userId={userId} />}/>
+      <Route path='/student/:userId' element={<Task userId={userId} />}/>
  </Routes>
  </BrowserRouter>
 

@@ -29,7 +29,7 @@ export const Login = ({setUserId}) => {
                setUserId(userId);
         // Fetch data immediately after setting the user ID
         fetchData(userId);
-                navigate(`/userDashboard/${userId}`); 
+                navigate(`/student/${userId}`); 
             }
         } catch (error) {
             console.error('Error:', error.response.data);
