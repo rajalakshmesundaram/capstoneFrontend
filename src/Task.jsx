@@ -12,7 +12,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
   const handleSaveMarks = async () => {
     try {
-      const response = await axios.post(`https://capstonebackend-twoc.onrender.com/api/getMarks/${userId}`, {
+      const response = await axios.post(`https://capstonebackend-1-34dv.onrender.com/api/getMarks/${userId}`, {
         frontsmarks,
         backsmarks,
         frontdmarks,

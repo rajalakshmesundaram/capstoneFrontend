@@ -18,7 +18,7 @@ export const Login = ({setUserId}) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('https://capstonebackend-twoc.onrender.com/api/loginUser', loginData);
+            const response = await axios.post('https://capstonebackend-1-34dv.onrender.com/api/loginUser', loginData);
             setMessage(response.data.message);
             const userId = response.data.userlogin._id;
             console.log(response.data);

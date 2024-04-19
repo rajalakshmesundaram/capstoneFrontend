@@ -20,7 +20,7 @@ export const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('https://capstonebackend-twoc.onrender.com/api/createUser', formData)
+            const response = await axios.post('https://capstonebackend-1-34dv.onrender.com/api/createUser', formData)
              if (response.data.message === "Registration successful") {
                 setMessage(response.data.message);
                 navigate('/login');
