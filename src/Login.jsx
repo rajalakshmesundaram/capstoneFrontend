@@ -44,7 +44,7 @@ export const Login = ({setUserId ,setName}) => {
       console.log(response.data.message);
    if (Array.isArray(response.data.message.codeKataScores) && response.data.message.codeKataScores.length === 0) {
     // The codeKataScores array is empty
-    randomData()
+    randomData(userId)
 }
 else{
   navigate("/taskchart")
@@ -54,9 +54,9 @@ else{
       console.error('Error fetching marks data:', error);
     }
   };
-  const randomData=async()=>{
+  const randomData=async(userId)=>{
       try {
-      const response = await axios.get(`https://capstonebackend-7.onrender.com/api/randomuserdata/${setUserId}`);
+      const response = await axios.get(`https://capstonebackend-7.onrender.com/api/randomuserdata/${userId}`);
       // Process the data as needed
       console.log(response.data.message);
       navigate("/taskchart")
