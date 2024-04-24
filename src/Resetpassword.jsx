@@ -14,7 +14,7 @@ export const Resetpassword = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('https://capstonebackend-twoc.onrender.com/api/resetpassword', {token, newPassword });
+            const response = await axios.post('https://capstonebackend-7.onrender.com/api/resetpassword', {token, newPassword });
             const data = response.data;
             setMessage(data.message);
         } catch (error) {

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import './style/Forgotpassword.css'
 export const ForgotPassword = () => {
     const navigate=useNavigate()
     const [email, setEmail] = useState('');
@@ -14,13 +14,13 @@ export const ForgotPassword = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('https://capstonebackend-twoc.onrender.com/api/forgotpassword', {email});
+            const response = await axios.post('https://capstonebackend-7.onrender.com/api/forgotpassword', {email});
             const data = response.data;
             setMessage(data.message);
           navigate(`/resetpassword/${token}`);
         } catch (error) {
             console.error('Error:', error.response.data);
-            setMessage("An error occurred");
+            setMessage(error.response.data.message);
         }
         
     };
@@ -35,8 +35,9 @@ export const ForgotPassword = () => {
                     <input type="email" className="form-control" id="email" name="email"value={email} onChange={handleChange} placeholder="Enter your email" required />
                 </div>
                 <button type="submit" className="btn btn-primary">Submit</button>
-                <div className="mt-3">
-                    {message && <div className="alert alert-info" role="alert">{message}</div>}
+                <br/>  <br/>
+                <div className= "col-md-3">
+                    <h4>{message}</h4>
                 </div>
             </form>
         </div>

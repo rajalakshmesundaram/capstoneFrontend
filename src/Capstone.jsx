@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import "./style/Task.css"
-  export const Task = ({ userId , name}) => {
+  export const Capstone = ({ userId , name}) => {
     const navigate=useNavigate()
      const [isLoggedIn, setIsLoggedIn] = useState(true);
     const[createmessage,setMessage]=useState('')
@@ -14,7 +14,7 @@ import "./style/Task.css"
 
   const handleSaveMarks = async () => {
     try {
-      const response = await axios.post(`https://capstonebackend-7.onrender.com/api/getMarks/${userId}`, {
+      const response = await axios.post(`https://capstonebackend-7.onrender.com/api/getcapstone/${userId}`, {
         frontsmarks,
         backsmarks,
         frontdmarks,
@@ -76,7 +76,7 @@ import "./style/Task.css"
                     <button  onClick={handleLogout}>Logout</button>
                 )}
             </div>
-            <h1>Task Submission</h1>
+            <h1>Capstone Submission</h1>
             <div className="mb-3">
               <label className="form-label">Front-end Source code</label>
               <input type="text" className="form-control" value={frontsmarks} onChange={(e) => setFsMarks(e.target.value)} />
@@ -103,5 +103,3 @@ import "./style/Task.css"
     </div>
   );
 };
-
-
